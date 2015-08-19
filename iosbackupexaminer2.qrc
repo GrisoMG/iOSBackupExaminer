@@ -1,0 +1,20 @@
+<RCC>
+  <qresource prefix="Images">
+    <file>data/img/web.png</file>
+    <file>data/img/unzip_all.png</file>
+    <file>data/img/unzip_app.png</file>
+    <file>data/img/about.png</file>
+    <file>data/img/apple.png</file>
+    <file>data/img/callhistory.png</file>
+    <file>data/img/close.png</file>
+    <file>data/img/contacts.png</file>
+    <file>data/img/exit.png</file>
+    <file>data/img/message.png</file>
+    <file>data/img/open.png</file>
+    <file>data/img/whatsapp.png</file>
+    <file>data/img/threema.jpg</file>
+    <file>data/img/verification_green.png</file>
+    <file>data/img/verification_orange.png</file>
+    <file>data/img/verification_red.png</file>
+  </qresource>
+</RCC>

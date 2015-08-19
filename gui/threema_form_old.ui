@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmThreema</class>
+ <widget class="QWidget" name="frmThreema">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1040</width>
+    <height>778</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>1</horstretch>
+    <verstretch>1</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1040</width>
+    <height>778</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777214</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Threema Report</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../../.designer/data/img/threema.jpg</normaloff>../../../.designer/data/img/threema.jpg</iconset>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>10</y>
+     <width>1031</width>
+     <height>201</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="1">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetMaximumSize</enum>
+    </property>
+    <item>
+     <widget class="QTableWidget" name="tableWidgetContacts">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOn</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOn</enum>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+      <attribute name="verticalHeaderStretchLastSection">
+       <bool>false</bool>
+      </attribute>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>220</y>
+     <width>371</width>
+     <height>551</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTableWidget" name="tableWidgetChats">
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>220</y>
+     <width>651</width>
+     <height>521</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QTableWidget" name="tableWidgetMessages">
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButtonPrintHTMLReport">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>750</y>
+     <width>85</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Print Report</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonExtract">
+   <property name="geometry">
+    <rect>
+     <x>378</x>
+     <y>750</y>
+     <width>85</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Extract</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButtonExtract</sender>
+   <signal>clicked()</signal>
+   <receiver>frmThreema</receiver>
+   <slot>extractThreema()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>434</x>
+     <y>884</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>520</x>
+     <y>885</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableWidgetChats</sender>
+   <signal>currentItemChanged(QTableWidgetItem*,QTableWidgetItem*)</signal>
+   <receiver>frmThreema</receiver>
+   <slot>onTreeClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>340</x>
+     <y>793</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>376</x>
+     <y>793</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonPrintHTMLReport</sender>
+   <signal>clicked()</signal>
+   <receiver>frmThreema</receiver>
+   <slot>printThreemaReport()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>933</x>
+     <y>883</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>834</x>
+     <y>874</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>extractThreema()</slot>
+  <slot>onTreeClick()</slot>
+  <slot>printThreemaReport()</slot>
+ </slots>
+</ui>

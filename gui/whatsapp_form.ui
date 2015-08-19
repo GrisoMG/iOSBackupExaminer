@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmWhatsapp</class>
+ <widget class="QMainWindow" name="frmWhatsapp">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>938</width>
+    <height>560</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>WhatsApp Report</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../iosbackupexaminer2.qrc">
+    <normaloff>:/Images/data/img/whatsapp.png</normaloff>:/Images/data/img/whatsapp.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0" colspan="2">
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QTableView" name="tableViewContacts">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>0</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QTableView" name="tableViewChats">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>500</width>
+          <height>0</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="1" colspan="3">
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <item>
+       <widget class="QTableView" name="tableViewMessages">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>0</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="2" colspan="2">
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QLabel" name="labelPicture">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>150</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelStatus">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>180</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QTableView" name="tableViewPhones">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionQuit"/>
+   <addaction name="separator"/>
+   <addaction name="actionExtract"/>
+   <addaction name="separator"/>
+   <addaction name="actionReport"/>
+  </widget>
+  <action name="actionExtract">
+   <property name="icon">
+    <iconset resource="../iosbackupexaminer2.qrc">
+     <normaloff>:/Images/data/img/unzip_app.png</normaloff>:/Images/data/img/unzip_app.png</iconset>
+   </property>
+   <property name="text">
+    <string>Extract Threema</string>
+   </property>
+   <property name="toolTip">
+    <string>Extract Threema App</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionReport">
+   <property name="icon">
+    <iconset resource="../iosbackupexaminer2.qrc">
+     <normaloff>:/Images/data/img/open.png</normaloff>:/Images/data/img/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>HTML Report</string>
+   </property>
+   <property name="toolTip">
+    <string>Create HTML Report</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="icon">
+    <iconset resource="../iosbackupexaminer2.qrc">
+     <normaloff>:/Images/data/img/exit.png</normaloff>:/Images/data/img/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../iosbackupexaminer2.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionExtract</sender>
+   <signal>activated()</signal>
+   <receiver>frmWhatsapp</receiver>
+   <slot>extractApp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>515</x>
+     <y>334</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionReport</sender>
+   <signal>activated()</signal>
+   <receiver>frmWhatsapp</receiver>
+   <slot>printReport()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>515</x>
+     <y>334</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionQuit</sender>
+   <signal>activated()</signal>
+   <receiver>frmWhatsapp</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>515</x>
+     <y>334</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableViewContacts</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>frmWhatsapp</receiver>
+   <slot>onTreeClickContacts()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>562</x>
+     <y>228</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>722</x>
+     <y>216</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableViewChats</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>frmWhatsapp</receiver>
+   <slot>onTreeClickChats()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>467</x>
+     <y>517</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>523</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>extractApp()</slot>
+  <slot>printReport()</slot>
+  <slot>onTreeClickContacts()</slot>
+  <slot>onTreeClickChats()</slot>
+ </slots>
+</ui>

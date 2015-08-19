@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmCallHistory</class>
+ <widget class="QMainWindow" name="frmCallHistory">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTableView" name="tableViewCalls"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionQuit"/>
+   <addaction name="separator"/>
+   <addaction name="actionExtract"/>
+   <addaction name="actionReport"/>
+  </widget>
+  <action name="actionQuit">
+   <property name="icon">
+    <iconset resource="../iosbackupexaminer2.qrc">
+     <normaloff>:/Images/data/img/exit.png</normaloff>:/Images/data/img/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="toolTip">
+    <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionExtract">
+   <property name="icon">
+    <iconset resource="../iosbackupexaminer2.qrc">
+     <normaloff>:/Images/data/img/unzip_app.png</normaloff>:/Images/data/img/unzip_app.png</iconset>
+   </property>
+   <property name="text">
+    <string>Extract</string>
+   </property>
+   <property name="toolTip">
+    <string>Extract App</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionReport">
+   <property name="icon">
+    <iconset resource="../iosbackupexaminer2.qrc">
+     <normaloff>:/Images/data/img/open.png</normaloff>:/Images/data/img/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Print Report</string>
+   </property>
+   <property name="toolTip">
+    <string>Create HTML Report</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../iosbackupexaminer2.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionQuit</sender>
+   <signal>triggered(bool)</signal>
+   <receiver>frmCallHistory</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExtract</sender>
+   <signal>activated()</signal>
+   <receiver>frmCallHistory</receiver>
+   <slot>extractApp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionReport</sender>
+   <signal>activated()</signal>
+   <receiver>frmCallHistory</receiver>
+   <slot>printReport()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>extractApp()</slot>
+  <slot>printReport()</slot>
+ </slots>
+</ui>

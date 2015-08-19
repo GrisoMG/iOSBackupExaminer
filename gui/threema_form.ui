@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmThreema</class>
+ <widget class="QMainWindow" name="frmThreema">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1031</width>
+    <height>669</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Threema Report</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../iosbackupexaminer2.qrc">
+    <normaloff>:/Images/data/img/threema.jpg</normaloff>:/Images/data/img/threema.jpg</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0" colspan="2">
+     <widget class="QTableWidget" name="tableWidgetContacts">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+      <attribute name="verticalHeaderStretchLastSection">
+       <bool>false</bool>
+      </attribute>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTableWidget" name="tableWidgetChats">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>600</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QTableWidget" name="tableWidgetMessages">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionQuit"/>
+   <addaction name="separator"/>
+   <addaction name="actionExtract"/>
+   <addaction name="separator"/>
+   <addaction name="actionReport"/>
+  </widget>
+  <action name="actionExtract">
+   <property name="icon">
+    <iconset resource="../iosbackupexaminer2.qrc">
+     <normaloff>:/Images/data/img/unzip_app.png</normaloff>:/Images/data/img/unzip_app.png</iconset>
+   </property>
+   <property name="text">
+    <string>Extract</string>
+   </property>
+   <property name="toolTip">
+    <string>Extract Threema App</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionReport">
+   <property name="icon">
+    <iconset resource="../iosbackupexaminer2.qrc">
+     <normaloff>:/Images/data/img/open.png</normaloff>:/Images/data/img/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Report</string>
+   </property>
+   <property name="toolTip">
+    <string>Create HTML Report</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="icon">
+    <iconset resource="../iosbackupexaminer2.qrc">
+     <normaloff>:/Images/data/img/exit.png</normaloff>:/Images/data/img/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../iosbackupexaminer2.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>tableWidgetContacts</sender>
+   <signal>currentItemChanged(QTableWidgetItem*,QTableWidgetItem*)</signal>
+   <receiver>frmThreema</receiver>
+   <slot>onTreeClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>73</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>144</x>
+     <y>21</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExtract</sender>
+   <signal>activated()</signal>
+   <receiver>frmThreema</receiver>
+   <slot>extractApp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>515</x>
+     <y>334</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionReport</sender>
+   <signal>activated()</signal>
+   <receiver>frmThreema</receiver>
+   <slot>printReport()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>515</x>
+     <y>334</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionQuit</sender>
+   <signal>activated()</signal>
+   <receiver>frmThreema</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>515</x>
+     <y>334</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onTreeClick()</slot>
+  <slot>extractApp()</slot>
+  <slot>printReport()</slot>
+ </slots>
+</ui>
