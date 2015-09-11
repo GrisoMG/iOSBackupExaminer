@@ -781,7 +781,8 @@ def printHTMLReport(outfile, contact_list, chat_session_list):
                 content_type = CONTENT_OTHER
             # End of If-Clause, now text or other type of content:
             if content_type == CONTENT_TEXT or content_type == CONTENT_OTHER:
-                msgtext = convertsmileys ( y.msg_text )
+                if y.msg_text != "" and y.msg_text is not None:
+                    msgtext = convertsmileys ( y.msg_text )
                 msgtext = re.sub(r'(http[^\s\n\r]+)', r'<a onclick="image(this.href);return(false);" target="image" href="\1">\1</a>', msgtext)
                 msgtext = re.sub(r'((?<!\S)www\.[^\s\n\r]+)', r'<a onclick="image(this.href);return(false);" target="image" href="http://\1">\1</a>', msgtext)
                 msgtext = msgtext.replace ("\n", "<br>\n")
