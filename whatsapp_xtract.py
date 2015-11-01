@@ -547,6 +547,7 @@ def findfile (type, size, localurl, date, additionaldays):
 def printHTMLReport(outfile, chat_session_list):
     owner = "WhatsApp-Report"
 
+    outfile = '%s.html' % outfile
     wfile = open(outfile,'wb')
     print ("printing output to "+outfile+" ...")
     # writes page header

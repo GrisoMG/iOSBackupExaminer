@@ -5,6 +5,8 @@
 .svn
 .txt
 .html
+.so
+.dylib
 
 #############
 ## Windows detritus
