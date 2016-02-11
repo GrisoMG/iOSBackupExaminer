@@ -41,19 +41,20 @@ class sqlBrowserGUI(QtGui.QMainWindow):
         self.dbtables = None
         self.dbviews = None
 
-        self.createConnection(sqlitedb)
+        if self.createConnection(sqlitedb) == False:
+            self.informationMessage("Can not open database")
+        else:
+            self.ui.treeWidgetDB.setContextMenuPolicy(Qt.CustomContextMenu)
+            self.ui.treeWidgetDB.customContextMenuRequested.connect(self.ctxMenu)
+            self.ui.txtSqlEdit.installEventFilter(self)
 
-        self.ui.treeWidgetDB.setContextMenuPolicy(Qt.CustomContextMenu)
-        self.ui.treeWidgetDB.customContextMenuRequested.connect(self.ctxMenu)
-        self.ui.txtSqlEdit.installEventFilter(self)
 
+            if self.sqlitedb.isOpen():
+                self.dbsystables = self.sqlitedb.tables(QtSql.QSql.SystemTables)
+                self.dbtables = self.sqlitedb.tables(QtSql.QSql.Tables)
+                self.dbviews = self.sqlitedb.tables(QtSql.QSql.Views)
 
-        if self.sqlitedb.isOpen():
-            self.dbsystables = self.sqlitedb.tables(QtSql.QSql.SystemTables)
-            self.dbtables = self.sqlitedb.tables(QtSql.QSql.Tables)
-            self.dbviews = self.sqlitedb.tables(QtSql.QSql.Views)
-
-        self.treeDatabase()
+            self.treeDatabase()
 
     def eventFilter(self, widget, event):
         if (event.type() == QtCore.QEvent.KeyPress and widget is self.ui.txtSqlEdit):
@@ -73,7 +74,6 @@ class sqlBrowserGUI(QtGui.QMainWindow):
     def treeDatabase(self):
 
         self.ui.treeWidgetDB.setHeaderLabels(('Schema ' + self.dbname + ';' + 'T/R' + ';' + 'Type' + ';' + 'Required' + ';' + 'Generated').split(';'))
-
 
         dbSysTables = QtGui.QTreeWidgetItem(None)
         dbSysTables.setText(0, 'System Tables')
@@ -198,3 +198,8 @@ class sqlBrowserGUI(QtGui.QMainWindow):
         model =  QtSql.QSqlQueryModel()
         model.setQuery(cmd)
         self.ui.tableViewTable.setModel(model)
+
+    def informationMessage(self, message):
+        QtGui.QMessageBox.information(self,
+                                      "Information",
+                                      message)
